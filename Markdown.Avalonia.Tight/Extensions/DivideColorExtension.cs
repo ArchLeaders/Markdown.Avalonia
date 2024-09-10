@@ -4,6 +4,7 @@ using Avalonia.Data.Converters;
 using Avalonia.Markup.Xaml;
 using Avalonia.Markup.Xaml.MarkupExtensions;
 using Avalonia.Media;
+using Avalonia.Media.Immutable;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace Markdown.Avalonia.Extensions
             IBinding left;
             if (Color.TryParse(_frmKey, out var leftColor))
             {
-                left = new StaticBinding(leftColor);
+                left = new StaticBinding(new ImmutableSolidColorBrush(leftColor));
             }
             else
             {
@@ -41,7 +42,7 @@ namespace Markdown.Avalonia.Extensions
             IBinding right;
             if (Color.TryParse(_toKey, out var rightColor))
             {
-                right = new StaticBinding(rightColor);
+                right = new StaticBinding(new ImmutableSolidColorBrush(rightColor));
             }
             else
             {
